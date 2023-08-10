@@ -1,0 +1,30 @@
+mat-toolbar-row {
+  justify-content: space-between;
+  display: flex;
+  padding: 0 50px;
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover{
+      color: black;
+      transition: 0.7s;
+    }
+
+    &.active{
+      color: rgb(150, 241, 122);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.container_item {
+  list-style: none;
+}
