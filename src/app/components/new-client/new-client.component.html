@@ -6,7 +6,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
-    <input matInput placeholder="Nome" formControlName="name">
+    <input matInput placeholder="Nome" formControlName="name" minlength="3" maxlength="45">
     <mat-error>Insira um nome válido.</mat-error>
   </mat-form-field>
 
@@ -18,7 +18,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Endereço</mat-label>
-    <input matInput placeholder="Endereço" formControlName="address">
+    <input matInput placeholder="Endereço" formControlName="address" minlength="10" maxlength="45">
     <mat-error>Insira um Endereço válido.</mat-error>
   </mat-form-field>
 

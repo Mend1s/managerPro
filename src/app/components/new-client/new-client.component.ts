@@ -31,9 +31,9 @@ export class NewClientComponent implements OnInit {
 
   createdFormsClient(){
     this.formsNewClient = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      address: ['', Validators.required]
+      name: ['', [Validators.required, Validators.minLength(3), Validators.max(45)]],
+      email: ['', [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      address: ['', [Validators.required, Validators.minLength(10), Validators.max(45)]]
     })
   }
 
