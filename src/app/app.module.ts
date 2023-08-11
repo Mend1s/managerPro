@@ -20,18 +20,16 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
-
-
-
-
+import { DeleteDialogComponent } from './shared/delete-dialog/delete-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     HomeComponent,
-    NewClientComponent
+    NewClientComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +45,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTooltipModule,
     ReactiveFormsModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

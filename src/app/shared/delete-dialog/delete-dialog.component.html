@@ -1,0 +1,10 @@
+<div>
+  <h1 mat-dialog-title>Deletar cliente</h1>
+  <div mat-dialog-content>
+    Deseja deletar o/a cliente?
+  </div>
+  <div mat-dialog-actions class="dialog-action">
+    <button mat-raised-button color="primary" mat-dialog-close>Não</button>
+    <button mat-raised-button color="warn" mat-dialog-close cdkFocusInitial (click)="deleteClient()">Sim</button>
+  </div>
+</div>

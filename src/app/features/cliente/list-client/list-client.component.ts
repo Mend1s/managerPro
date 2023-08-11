@@ -1,14 +1,19 @@
+import { DeleteDialogComponent } from './../../../shared/delete-dialog/delete-dialog.component';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Client } from '../models/client';
 import { ClienteService } from 'src/app/service/cliente.service';
 import { Router } from '@angular/router';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { getLanguagePaginateList } from 'src/app/shared/paginate-translate';
 @Component({
   selector: 'app-list-client',
   templateUrl: './list-client.component.html',
-  styleUrls: ['./list-client.component.scss']
+  styleUrls: ['./list-client.component.scss'],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getLanguagePaginateList() }]
 })
 
 export class ListClientComponent {
@@ -22,7 +27,8 @@ export class ListClientComponent {
 
   constructor(
     private clientService: ClienteService,
-    private router: Router) { }
+    private router: Router,
+    public dialog: MatDialog) { }
 
 
   ngOnInit() {
@@ -47,12 +53,6 @@ export class ListClientComponent {
     }
   }
 
-  deleteClient(id: any): void {
-    this.clientService.deleteClient(id).subscribe(data => {
-      this.router.navigate(['cliente']);
-      this.loadListClients();
-    })
-  }
 
   // to-do - dialog
   // implementar dialog com pergunta se quer deletar cliente
@@ -65,5 +65,20 @@ export class ListClientComponent {
 
   createNewClient() {
     this.router.navigate(['cliente', 'new-client']);
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, id: string): void {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '400px',
+      data: { id: id },
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadListClients();
+      }
+    })
   }
 }

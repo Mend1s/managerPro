@@ -40,7 +40,7 @@
             matTooltip="Editar cliente">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn" (click)="deleteClient(element.id)" matTooltip="Deletar cliente">
+          <button mat-icon-button color="warn" (click)="openDialog('0ms', '0ms', element.id)" matTooltip="Deletar cliente">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
@@ -53,7 +53,7 @@
         <td class="mat-cell" colspan="4">Oops, não encontramos esse cliente... "{{input.value}}"</td>
       </tr>
     </table>
-    <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecionar página">
     </mat-paginator>
   </div>
 </div>
