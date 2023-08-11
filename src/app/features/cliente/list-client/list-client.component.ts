@@ -35,17 +35,29 @@ export class ListClientComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  deleteClient(id: number): void{
-    // this.dataSource = this.dataSource.filter(p => p.position !== position);
-    console.log(id)
+  deleteClient(id: any): void {
+    this.clientService.deleteClient(id).subscribe(data => {
+      this.router.navigate(['cliente']);
+      this.loadListClients();
+    })
   }
 
-  editClient(element: Client): void{
+// to-do - dialog
+// implementar dialog com pergunta se quer deletar cliente
+// passar no dialog o ID e chamar a função de delete caso a pessoa queira excluir
+// caso nao queira, feche o dialog
+
+// to do - tela
+// criar forms reativo
+// consumir post e put
+// testar
+
+
+  editClient(element: Client): void {
     this.router.navigate(['cliente', 'edit-client', element.id]);
   }
 
-  createNewClient(){
+  createNewClient() {
     this.router.navigate(['cliente', 'new-client']);
   }
-
 }
