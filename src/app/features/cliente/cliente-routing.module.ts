@@ -2,6 +2,7 @@ import { RegisterComponent } from './register/register.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListClientComponent } from './list-client/list-client.component';
+import { NewClientComponent } from 'src/app/components/new-client/new-client.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,14 @@ const routes: Routes = [
   {
     path: 'list-client',
     component: ListClientComponent
+  },
+  {
+    path: 'new-client',
+    component: NewClientComponent
+  },
+  {
+    path: 'edit-client/:id',
+    component: NewClientComponent
   },
   {
     path: 'register',

@@ -11,11 +11,29 @@
 }
 
 .container {
-  // padding: 70px 80px 90px 80px;
   width: 1440px;
   display: flex;
   margin: 0 auto;
   flex-direction: column;
+}
+
+.container-header {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  & button{
+    width: 64px;
+    height: 56px;
+
+    & mat-icon {
+      margin: 0 auto;
+    }
+  }
+}
+
+.icon-list {
+  padding: 0;
 }
 
 @media (min-width: 600px)

@@ -1,1 +1,26 @@
-<p>new-client works!</p>
+<form action="" class="container-forms">
+  <h1 *ngIf="checkedClient; else createClient">Editar cliente</h1>
+  <ng-template #createClient>
+    <h1>Cadastrar um novo cliente :)</h1>
+  </ng-template>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Nome">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Endereço</mat-label>
+    <input matInput placeholder="Endereço">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saveForms()">{{ checkedClient ? 'Editar cliente' : 'Cadastrar' }}</button>
+  <!-- <ng-template #createButtonClient>
+    <h1>Cadastrar</h1>
+  </ng-template> -->
+</form>

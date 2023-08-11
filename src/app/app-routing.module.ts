@@ -14,10 +14,6 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'new-client',
-    component: NewClientComponent
-  },
-  {
     path: 'cliente',
     loadChildren: () => import('./features/cliente/cliente.module').then(m => m.ClienteModule)
   }

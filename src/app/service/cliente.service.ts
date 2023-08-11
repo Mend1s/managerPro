@@ -15,4 +15,12 @@ export class ClienteService {
   getListClients(): Observable<Client[]>{
     return this.http.get<Client[]>(`${this.baseUrl}/client`)
   }
+
+  getClientById(id: string): Observable<Client>{
+    return this.http.get<Client>(`${this.baseUrl}/client/${id}`)
+  }
+
+  putClient(client: Client): Observable<any>{
+    return this.http.put(`${this.baseUrl}client/${client.id}`, client);
+  }
 }

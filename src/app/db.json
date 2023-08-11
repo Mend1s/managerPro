@@ -1,37 +1,37 @@
 {
   "client": [
     {
-      "id": 1,
+      "id": "1",
       "name": "João Silva",
       "email": "joao.silva@example.com",
       "address": "Rua A, 123"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Maria Santos",
       "email": "maria.santos@example.com",
       "address": "Avenida B, 456"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Carlos Oliveira",
       "email": "carlos.oliveira@example.com",
       "address": "Praça C, 789"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Ana Pereira",
       "email": "ana.pereira@example.com",
       "address": "Estrada D, 101"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Pedro Alves",
       "email": "pedro.alves@example.com",
       "address": "Avenida E, 202"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Sofia Ferreira",
       "email": "sofia.ferreira@example.com",
       "address": "Rua F, 303"
