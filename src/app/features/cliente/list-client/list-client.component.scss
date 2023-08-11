@@ -1,0 +1,26 @@
+.mat-cell{
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  // padding: 70px 80px 90px 80px;
+  width: 1440px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+@media (min-width: 600px)
+{
+  .container {
+    padding: 70px 80px 90px 80px;
+  }
+}

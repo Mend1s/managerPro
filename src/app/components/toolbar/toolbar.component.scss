@@ -1,19 +1,25 @@
+mat-toolbar{
+  background-color: #302F3C;
+}
+
 mat-toolbar-row {
   justify-content: space-between;
   display: flex;
-  padding: 0 50px;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 0;
 
   a {
     text-decoration: none;
     color: white;
 
     &:hover{
-      color: black;
+      color: #b88e1a;
       transition: 0.7s;
     }
 
     &.active{
-      color: rgb(150, 241, 122);
+      color: #FFBB00;
     }
   }
 }

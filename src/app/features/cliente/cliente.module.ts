@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ClienteRoutingModule } from './cliente-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { ListClientComponent } from './list-client/list-client.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { ListClientComponent } from './list-client/list-client.component';
   ],
   imports: [
     CommonModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class ClienteModule { }
