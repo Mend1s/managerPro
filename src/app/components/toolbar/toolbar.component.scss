@@ -19,7 +19,7 @@ mat-toolbar-row {
     }
 
     &.active{
-      color: #FFBB00;
+      border-bottom: 1rem red;
     }
   }
 }

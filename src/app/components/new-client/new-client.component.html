@@ -1,4 +1,4 @@
-<form action="" class="container-forms">
+<form [formGroup]="formsNewClient" class="container-forms">
   <h1 *ngIf="checkedClient; else createClient">Editar cliente</h1>
   <ng-template #createClient>
     <h1>Cadastrar um novo cliente :)</h1>
@@ -6,20 +6,23 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
-    <input matInput placeholder="Nome">
+    <input matInput placeholder="Nome" formControlName="name">
+    <mat-error>Insira um nome válido.</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="Email">
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error>Insira um email válido.</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Endereço</mat-label>
-    <input matInput placeholder="Endereço">
+    <input matInput placeholder="Endereço" formControlName="address">
+    <mat-error>Insira um Endereço válido.</mat-error>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="saveForms()">{{ checkedClient ? 'Editar cliente' : 'Cadastrar' }}</button>
+  <button mat-raised-button color="primary" (click)="saveForms()" [disabled]="!formsNewClient.valid">{{ checkedClient ? 'Editar cliente' : 'Cadastrar' }}</button>
   <!-- <ng-template #createButtonClient>
     <h1>Cadastrar</h1>
   </ng-template> -->
