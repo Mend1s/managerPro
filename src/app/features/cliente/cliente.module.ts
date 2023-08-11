@@ -6,7 +6,8 @@ import { RegisterComponent } from './register/register.component';
 import { ListClientComponent } from './list-client/list-client.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MatInputModule} from '@angular/material/input';
     ClienteRoutingModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ]
 })
 export class ClienteModule { }
