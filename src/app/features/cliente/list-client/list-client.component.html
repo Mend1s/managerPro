@@ -11,7 +11,7 @@
     </button>
   </div>
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource">
+    <table mat-table [dataSource]="dataSource" #content>
 
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id Client</th>

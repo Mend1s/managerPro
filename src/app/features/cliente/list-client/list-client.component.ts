@@ -1,5 +1,5 @@
 import { DeleteDialogComponent } from './../../../shared/delete-dialog/delete-dialog.component';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Client } from '../models/client';
 import { ClienteService } from 'src/app/service/cliente.service';
@@ -8,6 +8,8 @@ import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { getLanguagePaginateList } from 'src/app/shared/paginate-translate';
+import { jsPDF } from "jspdf";
+
 @Component({
   selector: 'app-list-client',
   templateUrl: './list-client.component.html',
@@ -24,6 +26,7 @@ export class ListClientComponent {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
 
   constructor(
     private clientService: ClienteService,
@@ -52,12 +55,6 @@ export class ListClientComponent {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
-  // to-do - dialog
-  // implementar dialog com pergunta se quer deletar cliente
-  // passar no dialog o ID e chamar a função de delete caso a pessoa queira excluir
-  // caso nao queira, feche o dialog
 
   editClient(element: Client): void {
     this.router.navigate(['cliente', 'edit-client', element.id]);
