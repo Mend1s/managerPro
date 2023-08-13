@@ -77,12 +77,6 @@
       "name": "Pedro Alves",
       "email": "pedro.alves@example.com",
       "address": "Avenida E, 202"
-    },
-    {
-      "name": "andré mendes",
-      "email": "andremendes@gmail.com",
-      "address": "rua dos bobos",
-      "id": "mAxxrbU"
     }
   ]
 }
