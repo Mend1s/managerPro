@@ -1,4 +1,3 @@
-import { RegisterComponent } from './register/register.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListClientComponent } from './list-client/list-client.component';
@@ -21,10 +20,6 @@ const routes: Routes = [
   {
     path: 'edit-client/:id',
     component: NewClientComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
   }
 ];
 

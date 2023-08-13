@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { NewClientComponent } from './components/new-client/new-client.component';
 
 const routes: Routes = [
   {
@@ -16,6 +15,10 @@ const routes: Routes = [
   {
     path: 'cliente',
     loadChildren: () => import('./features/cliente/cliente.module').then(m => m.ClienteModule)
+  },
+  {
+    path: 'servicos',
+    loadChildren: () => import('./features/servicos/servicos.module').then(m => m.ServicosModule)
   }
 
 ];
