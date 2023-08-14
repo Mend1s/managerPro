@@ -14,11 +14,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
+import { NewServicoComponent } from './new-servico/new-servico.component';
 
 
 @NgModule({
   declarations: [
-    ListServicosComponent
+    ListServicosComponent,
+    NewServicoComponent
   ],
   imports: [
     CommonModule,

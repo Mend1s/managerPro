@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListServicosComponent } from './list-servicos/list-servicos.component';
+import { NewServicoComponent } from './new-servico/new-servico.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,16 @@ const routes: Routes = [
   {
     path: 'list-servicos',
     component: ListServicosComponent
+  },
+  {
+    path: 'new-servicos',
+    component: NewServicoComponent
+  },
+  {
+    path: 'edit-servicos/:id',
+    component: NewServicoComponent
   }
+
 ];
 
 @NgModule({

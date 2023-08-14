@@ -5,6 +5,7 @@ import { Servicos } from '../models/servicos';
 import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { getLanguagePaginateList } from 'src/app/shared/paginate-translate';
 import { MatSort } from '@angular/material/sort';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-servicos',
@@ -23,14 +24,11 @@ export class ListServicosComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private servicoService: ServicoService) {}
+  constructor(private servicoService: ServicoService,
+    private router: Router) {}
 
   ngOnInit(){
     this.loadListServices();
-  }
-
-  editServico(){
-
   }
 
   loadListServices() {
@@ -42,7 +40,13 @@ export class ListServicosComponent {
     })
   }
 
-  createNewServicos(){}
+  editServico(element: Servicos): void {
+    this.router.navigate(['servicos', 'edit-servicos', element.id]);
+  }
+
+  createNewServicos(){
+    this.router.navigate(['servicos', 'new-servicos']);
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

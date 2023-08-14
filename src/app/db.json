@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "João Silva",
-      "email": "joao.silva@example.com",
+      "email": "joao.silva@example.coa",
       "address": "Rua A, 123"
     },
     {
@@ -40,6 +40,12 @@
       "value": 3000,
       "material": 0,
       "total": 1000
+    },
+    {
+      "description": "teste",
+      "value": 7,
+      "material": "0",
+      "id": "qctVsG1"
     }
   ]
 }

@@ -1,0 +1,26 @@
+<form [formGroup]="formsNewService" class="container-forms">
+  <h1 *ngIf="checkedService; else createService">Editar serviço</h1>
+  <ng-template #createService>
+    <h1>Cadastrar um novo serviço</h1>
+  </ng-template>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Descrição</mat-label>
+    <input matInput placeholder="Descrição serviço" formControlName="description" maxlength="70">
+    <mat-error>Insira uma descrição válida.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Valor</mat-label>
+    <input type="number" matInput placeholder="Valor" formControlName="value">
+    <mat-error>Insira um valor válido.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Material</mat-label>
+    <input type="number" matInput placeholder="Material" formControlName="material">
+    <mat-error>Insira um valor válido.</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="saveForms()" [disabled]="!formsNewService.valid">{{ checkedService ? 'Editar serviço' : 'Cadastrar' }}</button>
+</form>

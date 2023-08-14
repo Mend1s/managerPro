@@ -25,8 +25,7 @@ export class NewClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.createdFormsClient();
-    this.getIdByRoute();
-    this.getClientbyId();
+    this.asEditorCreate();
   }
 
   createdFormsClient(){
@@ -43,9 +42,7 @@ export class NewClientComponent implements OnInit {
     if (this.rota === 'edit-client') {
       this.getIdByRoute();
       this.getClientbyId();
-    } else {
-
-    }
+    } else {}
   }
 
   getIdByRoute() {

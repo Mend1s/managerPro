@@ -3,5 +3,5 @@ export interface Servicos {
   description: string;
   value: number;
   material: number;
-  total: number;
+  // total: number;
 }
