@@ -1,18 +1,45 @@
-import { Component } from '@angular/core';
+import { ServicoService } from './../../../service/servico.service';
+import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Servicos } from '../models/servicos';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import { getLanguagePaginateList } from 'src/app/shared/paginate-translate';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-list-servicos',
   templateUrl: './list-servicos.component.html',
-  styleUrls: ['./list-servicos.component.scss']
+  styleUrls: ['./list-servicos.component.scss'],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getLanguagePaginateList() }
+  ]
 })
 export class ListServicosComponent {
 
-  displayedColumns: string[] = ['id', 'name', 'email', 'address', 'actions'];
-  dataSource!: MatTableDataSource<any>;
+  servicos!: Servicos[];
+  displayedColumns: string[] = ['id', 'description', 'value', 'material', 'actions'];
+  dataSource!: MatTableDataSource<Servicos>;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private servicoService: ServicoService) {}
+
+  ngOnInit(){
+    this.loadListServices();
+  }
 
   editServico(){
 
+  }
+
+  loadListServices() {
+    this.servicoService.getListAllServices().subscribe(data => {
+      this.servicos = data;
+      this.dataSource = new MatTableDataSource(this.servicos);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
   }
 
   createNewServicos(){}

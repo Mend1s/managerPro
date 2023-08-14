@@ -2,7 +2,7 @@
 
   <div class="container-header">
     <mat-form-field appearance="outline">
-      <mat-label>Pesquisar</mat-label>
+      <mat-label>Pesquisar serviço</mat-label>
       <input matInput (keyup)="applyFilter($event)" placeholder="Ex. André Mendes" #input>
     </mat-form-field>
 
@@ -14,27 +14,27 @@
     <table mat-table [dataSource]="dataSource" #content>
 
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>Id Client</th>
+        <th mat-header-cell *matHeaderCellDef>Id Serviço</th>
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Descrição</th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef>Email</th>
-        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef>Valor</th>
+        <td mat-cell *matCellDef="let element"> {{element.value | currency }} </td>
       </ng-container>
 
-      <ng-container matColumnDef="address">
-        <th mat-header-cell *matHeaderCellDef>Address</th>
-        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      <ng-container matColumnDef="material">
+        <th mat-header-cell *matHeaderCellDef>Material</th>
+        <td mat-cell *matCellDef="let element"> {{element.material | currency }} </td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
         <td mat-cell *matCellDef="let element">
           <button class="icon-list" mat-icon-button color="primary" (click)="editServico()"
             matTooltip="Editar cliente">

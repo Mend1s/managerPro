@@ -17,66 +17,29 @@
       "name": "Carlos Oliveira",
       "email": "carlos.oliveira@example.com",
       "address": "Praça C, 789"
+    }
+  ],
+  "servicos": [
+    {
+      "id": "1",
+      "description": "Demolição",
+      "value": 1000,
+      "material": 0,
+      "total": 1000
     },
     {
-      "id": "4",
-      "name": "Ana Pereira",
-      "email": "ana.pereira@example.com",
-      "address": "Estrada D, 101"
+      "id": "2",
+      "description": "Alvenaria",
+      "value": 2000,
+      "material": 0,
+      "total": 1000
     },
     {
-      "id": "6",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "7",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "8",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "9",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "10",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "11",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "9",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "10",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
-    },
-    {
-      "id": "11",
-      "name": "Pedro Alves",
-      "email": "pedro.alves@example.com",
-      "address": "Avenida E, 202"
+      "id": "3",
+      "description": "Contrapiso",
+      "value": 3000,
+      "material": 0,
+      "total": 1000
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DeleteDialogComponent } from './shared/delete-dialog/delete-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt, 'pt')
+
 
 @NgModule({
   declarations: [
@@ -48,7 +53,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSortModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [{
+    provide: DEFAULT_CURRENCY_CODE,
+    useValue: "BRL"
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
