@@ -15,12 +15,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { NewServicoComponent } from './new-servico/new-servico.component';
+import { DialogDeleteServiceComponent } from './dialog-delete-service/dialog-delete-service.component';
 
 
 @NgModule({
   declarations: [
     ListServicosComponent,
-    NewServicoComponent
+    NewServicoComponent,
+    DialogDeleteServiceComponent
   ],
   imports: [
     CommonModule,

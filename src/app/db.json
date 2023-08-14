@@ -23,9 +23,8 @@
     {
       "id": "1",
       "description": "Demolição",
-      "value": 1000,
-      "material": 0,
-      "total": 1000
+      "value": 10000,
+      "material": 0
     },
     {
       "id": "2",
@@ -40,12 +39,6 @@
       "value": 3000,
       "material": 0,
       "total": 1000
-    },
-    {
-      "description": "teste",
-      "value": 7,
-      "material": "0",
-      "id": "qctVsG1"
     }
   ]
 }

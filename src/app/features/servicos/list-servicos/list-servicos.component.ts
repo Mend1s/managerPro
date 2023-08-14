@@ -6,6 +6,8 @@ import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { getLanguagePaginateList } from 'src/app/shared/paginate-translate';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
+import { DialogDeleteServiceComponent } from '../dialog-delete-service/dialog-delete-service.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-list-servicos',
@@ -24,8 +26,10 @@ export class ListServicosComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private servicoService: ServicoService,
-    private router: Router) {}
+  constructor(
+    private servicoService: ServicoService,
+    private router: Router,
+    public dialog: MatDialog) {}
 
   ngOnInit(){
     this.loadListServices();
@@ -58,17 +62,17 @@ export class ListServicosComponent {
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string, id: string): void {
-    // const dialogRef = this.dialog.open(DeleteDialogComponent, {
-    //   width: '400px',
-    //   data: { id: id },
-    //   enterAnimationDuration,
-    //   exitAnimationDuration,
-    // });
+    const dialogRef = this.dialog.open(DialogDeleteServiceComponent, {
+      width: '400px',
+      data: { id: id },
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (result) {
-    //     this.loadListClients();
-    //   }
-    // })
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadListServices();
+      }
+    })
   }
 }
